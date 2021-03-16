@@ -1,0 +1,16 @@
+<app-issues-search
+  *ngIf="!(issues$ | async)"
+  (fetchRepoIssues)="fetchRepoIssues($event)"
+>
+</app-issues-search>
+
+<app-issues-results
+  *ngIf="issues$ | async"
+  [issues]="filteredIssues$ | async"
+  [issuesFilter]="issuesFilter$ | async"
+  [hasIssues]="(issues$ | async).length > 0"
+  [repoUrl]="repoUrl$ | async"
+  (filterIssues)="filterIssues($event)"
+  (resetIssues)="resetIssues()"
+>
+</app-issues-results>

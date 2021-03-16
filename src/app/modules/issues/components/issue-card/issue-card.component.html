@@ -1,0 +1,34 @@
+<div class="issue-title-icon-box">
+  <div class="issue-icon-box">
+    <img
+      *ngIf="issue.pull_request"
+      class="issue-icon"
+      src="../../../../../assets/icons/pull-request.svg"
+    />
+    <img
+      *ngIf="issue.state === issuesFiltersEnum.CLOSED.toLowerCase()"
+      class="issue-icon"
+      src="../../../../../assets/icons/issue-closed.svg"
+    />
+  </div>
+  <div class="issue-title">
+    <div class="issue-title__text">{{ issue.title }}</div>
+  </div>
+</div>
+<div class="issue-content">
+  <img src />
+  <div *ngIf="issue.body; else emptyBody" class="issue-content__body">
+    {{ issue.body }}
+  </div>
+  <ng-template #emptyBody>
+    <div class="issue-content__body body--no-description">
+      {{ noBodyText }}
+    </div>
+  </ng-template>
+</div>
+<div class="issue-labels">
+  <div *ngFor="let label of issue.labels" class="issue-labels__label">
+    <div class="label-bullet"></div>
+    <div>{{ label.name }}</div>
+  </div>
+</div>

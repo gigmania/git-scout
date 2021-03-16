@@ -1,0 +1,42 @@
+<header class="results-header">
+  <div class="brand-box">
+    <span class="brand-box__brand" (click)="clearResults()">
+      {{ gitScoutBrand }}
+    </span>
+    <span class="brand-box__url">
+      {{ repoUrl?.href }}
+    </span>
+  </div>
+  <div class="close-results" (click)="clearResults()">
+    <img
+      class="close-results__icon"
+      src="../../../../../assets/icons/close.svg"
+    />
+  </div>
+  <div *ngIf="hasIssues" class="issues-filters">
+    <span
+      *ngFor="let filter of issuesFilterEnum | keyvalue"
+      class="issues-filters__filter"
+      [ngClass]="{ selected: issuesFilter === filter.value }"
+      (click)="selectIssuesFilter(filter.value)"
+    >
+      {{ filter.value }}
+    </span>
+  </div>
+</header>
+<ng-container *ngIf="hasIssues && issues?.length > 0; else noIssuesMsg">
+  <main class="issue-cards-box">
+    <ng-container *ngFor="let issue of issues">
+      <app-issue-card
+        *ngIf="issue.title && issue.title.length > 1"
+        [issue]="issue"
+      >
+      </app-issue-card>
+    </ng-container>
+  </main>
+</ng-container>
+<ng-template #noIssuesMsg>
+  <main class="issue-cards-box no-issues-box">
+    {{ noIssuesMessage }}
+  </main>
+</ng-template>

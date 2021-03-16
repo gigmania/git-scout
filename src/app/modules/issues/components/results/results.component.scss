@@ -1,0 +1,143 @@
+// TODO: [v2] asset imports
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/fonts.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.results-header {
+  background-color: $gs-white;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+
+  .brand-box {
+    align-items: center;
+    background-color: $gs-light-maroon;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 16px 24px;
+    box-shadow: 0 0 8px lighten($gs-dark-slate, 15%);
+
+    &__brand {
+      cursor: pointer;
+      color: $gs-white;
+      font-family: "montserrat bold";
+      font-size: $gs-title;
+      padding: 0 16px 0 0;
+    }
+
+    &__url {
+      color: $gs-dark-maroon;
+      font-family: "montserrat light";
+      font-size: $gs-body;
+      word-break: break-all;
+      text-shadow: 1px 1px 2px $gs-light-grey;
+    }
+  }
+
+  .close-results {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 16px 0;
+
+    &__icon {
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .issues-filters {
+    align-items: center;
+    display: flex;
+    padding: 0 $results-box-x-padding-small 8px;
+
+    &__filter {
+      cursor: pointer;
+      font-family: "montserrat light";
+      font-size: $gs-body;
+      margin: 0 4px;
+      padding: 0 4px;
+
+      &.selected {
+        color: $gs-light-maroon;
+      }
+    }
+  }
+}
+
+.issue-cards-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 $results-box-x-padding-small 48px;
+
+  &.no-issues-box {
+    color: $gs-light-grey;
+    font-family: "montserrat";
+    font-size: $gs-sub-title;
+    padding-top: 16px;
+    word-break: break-all;
+  }
+}
+
+// adaptive styles
+@media screen and (min-width: 700px) {
+  .results-header {
+    .brand-box {
+      &__brand {
+        font-size: $gs-sub-heading;
+      }
+
+      &__url {
+        font-size: $gs-sub-title;
+      }
+    }
+    .close-results {
+      padding: 16px 16px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .results-header {
+    .brand-box {
+      padding: 24px 48px;
+    }
+
+    .close-results {
+      padding: 24px 24px 0;
+
+      &__icon {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    .issues-filters {
+      padding: 0 $results-box-x-padding-medium 8px;
+    }
+  }
+
+  .issue-cards-box {
+    padding: 0 $results-box-x-padding-medium 48px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .results-header {
+    .issues-filters {
+      padding: 0 $results-box-x-padding-large 8px;
+    }
+  }
+
+  .issue-cards-box {
+    padding: 0 $results-box-x-padding-large 48px;
+  }
+}

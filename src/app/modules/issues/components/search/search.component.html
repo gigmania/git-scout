@@ -1,0 +1,23 @@
+<section class="scout-title">
+  <div class="scout-title__brand">Git Scout</div>
+</section>
+
+<form
+  class="scout-form"
+  (ngSubmit)="getRepoIssues(repoIssuesForm.value)"
+  #repoIssuesForm="ngForm"
+  novalidate
+>
+  <img
+    class="scout-form__input-icon"
+    src="../../../../../assets/icons/search.svg"
+  />
+  <input
+    class="scout-form__input"
+    type="text"
+    name="url"
+    [placeholder]="urlPlaceholder"
+    ngModel
+  />
+</form>
+

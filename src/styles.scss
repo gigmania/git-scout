@@ -1,0 +1,16 @@
+@import "./assets/styles/variables.scss";
+@import "./assets/styles/fonts.scss";
+
+body {
+  background-color: $gs-light-maroon;
+  margin: 0;
+  padding: 0;
+
+  &.results {
+    background-color: $gs-white;
+  }
+}
+
+input:focus {
+  outline: none;
+}

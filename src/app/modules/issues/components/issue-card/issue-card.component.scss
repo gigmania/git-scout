@@ -1,0 +1,134 @@
+// TODO: [v2] asset imports
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/fonts.scss";
+
+:host {
+  box-shadow: 0 7px 30px -10px $gs-dark-slate;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  justify-content: space-between;
+  margin: 20px 8px;
+  max-height: 250px;
+  width: 100%;
+}
+
+.issue-title-icon-box {
+  background-color: $gs-light-blue;
+  border-radius: 2px 2px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .issue-icon-box {
+    align-items: flex-end;
+    display: flex;
+    height: 16px;
+    justify-content: flex-end;
+    width: 100%;
+
+    .issue-icon {
+      height: $gs-body;
+      margin-right: 8px;
+      width: $gs-body;
+    }
+  }
+
+  .issue-title {
+    color: white;
+    display: flex;
+    font-family: "montserrat";
+    font-size: $gs-sub-title;
+    padding: 0 0 16px;
+    width: 100%;
+
+    &__text {
+      display: -webkit-box;
+      overflow: hidden;
+      padding: 0px 16px;
+      text-overflow: ellipsis;
+      word-break: break-word;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.issue-content {
+  display: flex;
+  flex-direction: column;
+  font-family: "montserrat light";
+  font-size: $gs-body;
+  justify-content: flex-start;
+  padding: 8px 0;
+  overflow: hidden;
+
+  &__body {
+    color: $gs-dark-slate;
+    display: -webkit-box;
+    padding: 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+
+    &.body--no-description {
+      color: $gs-light-grey;
+    }
+  }
+}
+
+.issue-labels {
+  color: $gs-white;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 24px;
+  height: 24px;
+  padding: 0 8px 16px 8px;
+  overflow: hidden;
+
+  &__label {
+    align-items: center;
+    background-color: $gs-light-maroon;
+    border-radius: 4px;
+    display: flex;
+    font-family: "montserrat light";
+    font-size: $gs-footnote;
+    justify-content: center;
+    margin: 8px 8px 8px 0;
+    padding: 2px 6px 3px 6px;
+
+    .label-bullet {
+      background-color: $gs-white;
+      border-radius: 50%;
+      height: 4px;
+      margin: 1px 4px 0 0;
+      width: 4px;
+    }
+  }
+}
+
+// adaptive styles
+@media screen and (min-width: 700px) {
+  :host {
+    width: 45%;
+  }
+
+  .issue-content {
+    height: 102px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :host {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  :host {
+    width: 22%;
+  }
+}

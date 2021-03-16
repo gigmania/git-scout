@@ -1,0 +1,71 @@
+// TODO: [v2] asset imports
+@import "../../../../../assets/styles/variables.scss";
+@import "../../../../../assets/styles/fonts.scss";
+
+:host {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.scout-title {
+  color: $gs-white;
+  padding: 8px;
+
+  &__brand {
+    font-family: "montserrat bold";
+    font-size: $gs-heading;
+  }
+}
+
+.scout-form {
+  align-items: center;
+  display: flex;
+  width: 90%;
+  padding: 0 0 80px;
+
+  &__input-icon {
+    height: 28px;
+    padding-left: 16px;
+    position: absolute;
+    width: 28px;
+  }
+
+  &__input {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 8px lighten($gs-light-maroon, 15%);
+    color: $gs-light-slate;
+    font-size: $gs-sub-heading;
+    line-height: $gs-heading;
+    padding: 8px 24px 8px 56px;
+    width: 100%;
+
+    &:-webkit-autofill,
+    :-webkit-autofill:hover, 
+    :-webkit-autofill:focus {
+      -webkit-text-fill-color: $gs-light-slate;
+    }
+
+    &::placeholder {
+      color: $gs-light-grey;
+    }
+  }
+}
+
+// adaptive styles
+@media screen and (min-width: 700px) {
+  .scout-form {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .scout-form {
+    width: 70%;
+  }
+}
