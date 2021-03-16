@@ -4,7 +4,7 @@
 
 > What do you think are the greatest areas of risk in completing the project?
 
-- Handling invalid values submitted with the imput.
+- Handling invalid values submitted with the input.
 
 > What changes/additions would you make to the design?
 
@@ -35,9 +35,7 @@ Considering the project requirements did not call for routing and its unlikely I
 - About 8 hours: 30 mins planning. 5.5 hours coding. 1 hour solution look ups. 30 min debugging. 30 min scenario testing.
 
 > If you could go back and give yourself advice at the beginning of the project, what would it be?
-To spend more time planning before starting to code.  It might have saved me some time I spent refactoring.
-
--
+- To spend more time planning before starting to code.  It might have saved me some time I spent refactoring.
 
 > Did you learn anything new?
 
